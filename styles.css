@@ -1,0 +1,359 @@
+/* Fuente personalizada */
+@font-face {
+  font-family: "Erstoria";
+  src: url("fonts/Erstoria.woff2") format("woff2");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Kalista";
+  src: url("fonts/Kalista\ Script\ Regular.woff2") format("woff2"),
+    url("fonts/Kalista\ Script\ Regular.woff") format("woff");
+}
+
+/* General */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Secciones */
+section {
+  min-height: 100vh; /* que ocupe toda la pantalla */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-size: cover; /* esto hace que no se deforme y se ajuste bien */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+}
+.Bienvenida {
+  background-image: url("assests/photos/photo1.png");
+}
+
+.Fecha {
+  background-image: url("assests/photos/photo2.jpg");
+}
+
+.contenido {
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+/* Responsive para móvil */
+@media (max-width: 600px) {
+  h1,
+  h2 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .contenido {
+    padding: 1rem;
+  }
+}
+
+/* Botón de música */
+.btn-musica {
+  background-color: #a47764;
+  border-radius: 50%;
+  width: 3.75rem;
+  height: 3.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: pointer;
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.2);
+}
+
+/* Iconos de sonido */
+.icono-silencio,
+.icono-sonando {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-size: cover;
+}
+
+.icono-silencio {
+  background-image: url("assets/icons/silencio.png");
+}
+
+.icono-sonando {
+  background-image: url("assets/icons/sonido.png");
+}
+
+/* Botones generales */
+button {
+  padding: 0.625rem 1.25rem;
+  margin-top: 1.25rem;
+  background-color: #b98d7a;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+button:hover {
+  background-color: #a47764;
+}
+
+/* Títulos */
+h1 {
+  text-align: center;
+  font-size: 80px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-30%);
+  transform: translateY(-300%);
+}
+
+/* Frase especial */
+.blockquote {
+  font-family: "Montserrat";
+  font-style: italic;
+  text-align: justify;
+  padding: 1.8rem;
+  border-radius: 0.5rem;
+  color: #a47764;
+  line-height: 2.5rem;
+}
+
+/* Cuenta regresiva */
+
+/* Confirmación */
+.Confirmacion form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  max-width: 31.25rem;
+  margin: 0 auto;
+}
+
+.Confirmacion input,
+.Confirmacion textarea {
+  padding: 0.75rem;
+  border: 1px solid #a47764;
+  border-radius: 0.5rem;
+  font-size: 1em;
+}
+
+.Confirmacion textarea {
+  min-height: 6.2rem;
+  resize: vertical;
+}
+
+.Confirmacion button {
+  background-color: #b98d7a;
+  color: white;
+  border: none;
+  padding: 0.9rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.3s ease;
+}
+
+.Confirmacion button:hover {
+  background-color: #a47764;
+}
+
+/* Luagres */
+.container img {
+  width: 50%;
+  max-width: 6.2rem;
+  height: auto;
+  margin: 10px auto;
+  display: block;
+}
+
+/* Mesa de regalos */
+
+.mesaregalos ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.mesaregalos li {
+  margin-bottom: 0.9rem;
+}
+/* Hoteles */
+
+.hoteles img {
+  width: 50%;
+  max-width: 6.25rem;
+  height: auto;
+  margin: 10px auto;
+  display: block;
+  cursor: pointer;
+}
+/* Carousel */
+.carousel {
+  width: 90vw;
+  height: auto;
+  align-content: normal;
+}
+.carousel img {
+  border-radius: 3.1rem;
+}
+
+/* Linea Tiempo */
+
+.timeline-section {
+  text-align: center;
+  background-color: #f9f9f3;
+  padding: 50px 20px;
+  max-width: 1500px;
+  margin: 50px auto;
+  border-radius: 16px;
+  font-weight: bold;
+}
+
+h6 {
+  font-family: "Erstoria";
+  font-weight: bold;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 6.25rem;
+  color: #a47864;
+}
+
+.timeline {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 5.6rem;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #a47864;
+  z-index: 0;
+  animation: moveline 20s linear forwards;
+}
+@keyframes moveline {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100;
+  }
+}
+
+.event {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 7.5rem;
+  margin: 0 10px;
+}
+
+.event img {
+  width: 4.3rem;
+  margin-bottom: 1.25rem;
+}
+
+.time {
+  font-size: 1.8rem;
+  margin: 5px 0;
+  color: #a47864;
+  font-weight: normal;
+}
+
+.label {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #a47864;
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+@media screen and (max-width: 768px) {
+  .timeline {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timeline::before {
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+  }
+
+  .event {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    margin: 20px 0;
+    text-align: left;
+    gap: 1rem;
+  }
+
+  .event img {
+    width: 3.5rem;
+    margin: 0;
+  }
+
+  .event .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .time,
+  .label {
+    text-align: left;
+  }
+  @keyframes moveline {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 100;
+    }
+  }
+}
+
+/* Boton temas*/
+
+/* wishlist images */
+
+img.wishlist {
+  border-radius: 0.5rem;
+  width: 50% !important;
+  height: auto !important;
+}
+
+#notificacion {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #a47764;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  font-family: sans-serif;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
