@@ -1,3 +1,13 @@
+window.addEventListener("load", () => {
+  const modal = document.querySelector(".modal-bienvenida");
+  modal.style.display = "flex";
+});
+// Función para cerrar el modal
+function cerrarModalWelcome() {
+  const modal = document.querySelector(".modal-bienvenida");
+  modal.style.display = "none";
+}
+
 // Función para cerrar el menú
 function cerrarMenu() {
   const menu = document.querySelector(".estilos-menu");
@@ -67,20 +77,20 @@ function reproducirMusica() {
     iconoMusica.classList.add("icono-silencio");
   }
 }
-// confirmacion
+
 function cerrarModalWelcome() {
   const modal = document.querySelector(".modal-bienvenida");
   if (modal) modal.style.display = "none";
 }
 
 function copyInfo() {
-  const textoACopiar = "012320015636927951";
+  const textoACopiar = "012320015086639718";
 
   navigator.clipboard
     .writeText(textoACopiar)
     .then(() =>
       mostrarNotificacion(
-        "Cuenta copiada al portapapeles:\nBBVA | Karina Lizeth Delgado Benítez — 012320015636927951"
+        "Cuenta copiada al portapapeles:\nBBVA | Erika Daleth I. Aguilera Limón — 012320015086639718"
       )
     )
     .catch((err) => console.error("Error al copiar al portapapeles: ", err));

@@ -1,66 +1,118 @@
 /* Fuente personalizada */
 @font-face {
-  font-family: "Erstoria";
-  src: url("fonts/Erstoria.woff2") format("woff2");
-  font-weight: normal;
+  font-family: "Golden";
+  src: url("fonts/font1/Golden\ Wave.woff") format("woff"),
+    url("fonts/font1/Golden\ Wave\ Italic.woff") format("woff");
 }
 @font-face {
-  font-family: "Kalista";
-  src: url("fonts/Kalista\ Script\ Regular.woff2") format("woff2"),
-    url("fonts/Kalista\ Script\ Regular.woff") format("woff");
+  font-family: "Royal";
+  src: url("fonts/font2/RoyalWedding-Regular.woff2") format("woff2"),
+    url("fonts/font2/RoyalWedding-Regular.woff") format("woff");
 }
 
 /* General */
 body {
-  margin: 0;
-  padding: 0;
-}
-
-/* Secciones */
-section {
-  min-height: 100vh; /* que ocupe toda la pantalla */
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  background-size: cover; /* esto hace que no se deforme y se ajuste bien */
+  font-family: "Golden";
+  background-color: #f9f9f3;
+  color: #b98d7a;
+  line-height: 1.6;
+  padding: 1.25rem;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  color: #fff;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+/* Modal de bienvenida */
+.modal-bienvenida {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("assets/photos/Fondo1.jpg");
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  font-family: "Montserrat";
+  color: #8d6852;
+  letter-spacing: 0.2rem;
+}
+
+.modal-bienvenida-body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f3f3f3;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 1.25rem;
   text-align: center;
-}
-.Bienvenida {
-  background-image: url("assests/photos/photo1.png");
-}
-
-.Fecha {
-  background-image: url("assests/photos/photo2.jpg");
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  background-image: url("assets/photos/Fondo1.jpg");
 }
 
-.contenido {
-  padding: 2rem;
-  border-radius: 1rem;
+.modal-bienvenida h1 {
+  font-family: "Royal";
+  font-size: 3.75rem;
+  color: #8d6852;
+}
+.modal-bienvenida p {
+  font-family: "Montserrat";
+  color: #8d6852;
+  font-weight: bold;
 }
 
-/* Responsive para móvil */
-@media (max-width: 600px) {
-  h1,
-  h2 {
-    font-size: 2rem;
-  }
+/* Secciones internas del modal */
+.modal-lateral-nombres {
+  font-size: 2.5rem;
+}
+.modal-lateral-fecha {
+  font-size: 1.5625rem;
+  font-weight: bold;
+  margin-bottom: 1.875rem;
+}
 
-  p {
-    font-size: 1rem;
-  }
+#btn-ingresar {
+  width: 9.375rem;
+  padding: 0.625rem 1.25rem;
+  margin-top: 1.25rem;
+  background-color: #8d6852;
+  color: #f3f3f3;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+  font-weight: bold;
+  font-family: "Montserrat";
+}
 
-  .contenido {
-    padding: 1rem;
-  }
+#btn-ingresar:hover {
+  transform: scale(1.05);
+  background-color: #7e7d43;
+}
+
+#btn-ingresar img {
+  width: 200%;
+  height: auto;
+}
+
+.fixed-panel {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
 }
 
 /* Botón de música */
 .btn-musica {
-  background-color: #a47764;
+  background-color: #999859;
   border-radius: 50%;
   width: 3.75rem;
   height: 3.75rem;
@@ -92,7 +144,7 @@ section {
 button {
   padding: 0.625rem 1.25rem;
   margin-top: 1.25rem;
-  background-color: #b98d7a;
+  background-color: #999859;
   color: white;
   border: none;
   cursor: pointer;
@@ -100,31 +152,109 @@ button {
 }
 
 button:hover {
-  background-color: #a47764;
+  background-color: #7e7d43;
+}
+
+@media (max-width: 768px) {
+  .modal-bienvenida {
+    padding: 1rem;
+    background-position: center;
+  }
+
+  .modal-bienvenida-body {
+    width: 90vw;
+    padding: 1rem;
+  }
+
+  .modal-intro-img img {
+    width: 12rem;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  .modal-bienvenida h1 {
+    font-size: 2rem;
+  }
+
+  .modal-bienvenida p {
+    font-size: 1rem;
+  }
+
+  .modal-lateral-nombres {
+    font-size: 1.5rem;
+  }
+
+  .modal-lateral-fecha {
+    font-size: 1.125rem;
+  }
+
+  #btn-ingresar {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+
+  #btn-ingresar img {
+    width: 100%;
+  }
+}
+
+/* Secciones */
+section {
+  margin: 80px 0;
+  animation: fadeInUp 1s ease;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.uno {
+  background-image: url("assets/photos/Imagen1.png");
+}
+.dos {
+  background-image: url("assets/photos/Imagen2.png");
+}
+.siete {
+  background-image: url("assets/photos/Imagen13.JPG");
 }
 
 /* Títulos */
-h1 {
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Golden";
+  font-style: bold;
+  color: #a47864;
+  margin-bottom: 1.25rem;
+  font-weight: bold;
   text-align: center;
-  font-size: 80px;
-  top: 0;
-  left: 50%;
-  transform: translateX(-30%);
-  transform: translateY(-300%);
+  font-size: 2.5rem;
 }
-
-/* Frase especial */
-.blockquote {
-  font-family: "Montserrat";
-  font-style: italic;
-  text-align: justify;
-  padding: 1.8rem;
-  border-radius: 0.5rem;
-  color: #a47764;
-  line-height: 2.5rem;
+h5 {
+  color: #8d6852;
+  margin-bottom: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.8rem;
 }
 
 /* Cuenta regresiva */
+
+.cuenta-regresiva {
+  color: #f9f9f3;
+  display: flex;
+  justify-content: center;
+  gap: 0.9rem;
+  font-size: 5rem;
+  flex-wrap: wrap;
+  bottom: 10px;
+  left: 50%;
+}
 
 /* Confirmación */
 .Confirmacion form {
@@ -138,7 +268,7 @@ h1 {
 .Confirmacion input,
 .Confirmacion textarea {
   padding: 0.75rem;
-  border: 1px solid #a47764;
+  border: 1px solid #8d6852;
   border-radius: 0.5rem;
   font-size: 1em;
 }
@@ -149,7 +279,7 @@ h1 {
 }
 
 .Confirmacion button {
-  background-color: #b98d7a;
+  background-color: #999859;
   color: white;
   border: none;
   padding: 0.9rem;
@@ -160,7 +290,7 @@ h1 {
 }
 
 .Confirmacion button:hover {
-  background-color: #a47764;
+  background-color: #7e7d43;
 }
 
 /* Luagres */
@@ -183,16 +313,7 @@ h1 {
 .mesaregalos li {
   margin-bottom: 0.9rem;
 }
-/* Hoteles */
 
-.hoteles img {
-  width: 50%;
-  max-width: 6.25rem;
-  height: auto;
-  margin: 10px auto;
-  display: block;
-  cursor: pointer;
-}
 /* Carousel */
 .carousel {
   width: 90vw;
@@ -205,129 +326,97 @@ h1 {
 
 /* Linea Tiempo */
 
-.timeline-section {
-  text-align: center;
-  background-color: #f9f9f3;
-  padding: 50px 20px;
-  max-width: 1500px;
-  margin: 50px auto;
-  border-radius: 16px;
-  font-weight: bold;
-}
-
-h6 {
-  font-family: "Erstoria";
-  font-weight: bold;
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 6.25rem;
-  color: #a47864;
-}
-
 .timeline {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
 .timeline::before {
   content: "";
   position: absolute;
-  top: 5.6rem;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: #a47864;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background-color: #ccc;
+  transform: translateX(-50%);
   z-index: 0;
-  animation: moveline 20s linear forwards;
-}
-@keyframes moveline {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100;
-  }
 }
 
 .event {
   position: relative;
-  z-index: 1;
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.event.left .event-content {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
   align-items: center;
-  text-align: center;
-  width: 7.5rem;
-  margin: 0 10px;
+  justify-content: flex-start;
+}
+
+.event.right .event-content {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.event-content {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.event-content.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .event img {
-  width: 4.3rem;
-  margin-bottom: 1.25rem;
+  width: 50px;
+  height: 50px;
 }
 
-.time {
-  font-size: 1.8rem;
-  margin: 5px 0;
-  color: #a47864;
-  font-weight: normal;
+.marker {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  background-color: #8c7053;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
 
-.label {
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: #a47864;
-  text-align: center;
-  letter-spacing: 3px;
-}
-
-@media screen and (max-width: 768px) {
-  .timeline {
+@media (max-width: 768px) {
+  .event.left .event-content,
+  .event.right .event-content {
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 
   .timeline::before {
-    top: 0;
-    left: 50%;
-    width: 2px;
-    height: 100%;
+    left: 8px;
   }
 
-  .event {
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    max-width: 300px;
-    margin: 20px 0;
-    text-align: left;
-    gap: 1rem;
-  }
-
-  .event img {
-    width: 3.5rem;
-    margin: 0;
-  }
-
-  .event .text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .time,
-  .label {
-    text-align: left;
-  }
-  @keyframes moveline {
-    0% {
-      height: 0;
-    }
-    100% {
-      height: 100;
-    }
+  .marker {
+    left: 8px;
   }
 }
 
@@ -347,7 +436,7 @@ img.wishlist {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #a47764;
+  background-color: #999859;
   color: white;
   padding: 12px 24px;
   border-radius: 8px;
