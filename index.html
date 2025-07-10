@@ -13,7 +13,7 @@
       integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
       crossorigin="anonymous"
     />
-    <link rel="icon" href="assets/icons/sello.png" type="image/png" sizes="" />
+    <link rel="icon" href="assets/icons/sello2.png" type="image/png" sizes="" />
     <link rel="stylesheet" href="styles.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
@@ -26,14 +26,14 @@
     <!-- Intro -->
     <div class="modal-bienvenida">
       <div class="modal-bienvenida-body">
+        <p>
+          Tenemos el placer de <br />
+          invitarlos a Nuestra Boda
+        </p>
         <div class="modal-lateral-nombres">
           <h1>Daleth &amp; Ruben</h1>
         </div>
         <div class="modal-lateral-fecha">04 Octubre 2025</div>
-        <p>
-          Tenemos el placer de <br />
-          invitarlos a nuestra Boda
-        </p>
         <button type="button" id="btn-ingresar" onclick="cerrarModalWelcome()">
           INGRESAR
         </button>
@@ -66,8 +66,8 @@
     <!-- 1. Foto -->
     <section class="seccion uno">
       <div class="contenido">
-        <h1>D Y R</h1>
-        <p>04.10.25</p>
+        <h2>D Y R</h2>
+        <p id="p2">04.10.25</p>
         <img src="assets/photos/Imagen1.png" alt="Foto de los novios" />
       </div>
     </section>
@@ -77,13 +77,12 @@
       <div class="contenido">
         <p>Nos complance invitarte a la celebracion de</p>
         <br />
-        <p id="p1">Nuetra Boda</p>
+        <p id="p3">Nuetra Boda</p>
         <div id="cuenta-regresiva" class="cuenta-regresiva"></div>
       </div>
     </section>
 
     <!-- 3. Lugares -->
-
     <section class="container">
       <div class="row">
         <div class="col-12 col-md-12 my-5">
@@ -107,58 +106,68 @@
 
     <!-- 4. Cronología -->
 
-    <section class="timeline-section">
+    <!-- 4. cronologia 2.0 -->
+    <section class="seccion cinco">
       <h4>Itinerario de la Boda</h4>
       <div class="timeline">
-        <div class="event left">
-          <div class="marker"></div>
-          <div class="event-content">
-            <img src="assets/icons/iglesia.png" alt="Iglesia" />
-            <div class="text">
-              <p class="time">4 pm</p>
-              <p class="label">Ceremonia Religiosa</p>
-            </div>
-          </div>
+        <!-- Evento 1: imagen izquierda, texto derecha -->
+        <div class="timeline__component timeline__date">
+          <img src="assets/icons/iglesia.png" alt="Iglesia" />
         </div>
-        <div class="event right">
-          <div class="marker"></div>
-          <div class="event-content">
-            <div class="text">
-              <p class="time">5 pm</p>
-              <p class="label">Cocktel de Bienvenida</p>
-            </div>
-            <img src="assets/icons/vino.png" alt="Cocktel" />
-          </div>
+        <div class="timeline__middle">
+          <div class="timeline__point"></div>
         </div>
-        <div class="event left">
-          <div class="marker"></div>
-          <div class="event-content">
-            <img src="assets/icons/plato.png" alt="Cena" />
-            <div class="text">
-              <p class="time">7 pm</p>
-              <p class="label">Cena</p>
-            </div>
-          </div>
+        <div class="timeline__component timeline__component--bg">
+          <h2 class="timeline__title">Ceremonia Religiosa</h2>
+          <p class="timeline__paragraph">4 pm</p>
         </div>
-        <div class="event right">
-          <div class="marker"></div>
-          <div class="event-content">
-            <div class="text">
-              <p class="time">9 pm</p>
-              <p class="label">Baile</p>
-            </div>
-            <img src="assets/icons/baile.png" alt="Baile" />
-          </div>
+
+        <!-- Evento 2: texto izquierda, imagen derecha -->
+        <div class="timeline__component timeline__component--bg">
+          <h2 class="timeline__title">Cocktail de Bienvenida</h2>
+          <p class="timeline__paragraph">5 pm</p>
         </div>
-        <div class="event left">
-          <div class="marker"></div>
-          <div class="event-content">
-            <img src="assets/icons/alfiler.png" alt="Adios" />
-            <div class="text">
-              <p class="time">1 am</p>
-              <p class="label">Nos Despedimos</p>
-            </div>
-          </div>
+        <div class="timeline__middle">
+          <div class="timeline__point"></div>
+        </div>
+        <div class="timeline__component timeline__date timeline__date--right">
+          <img src="assets/icons/vino.png" alt="Cocktail" />
+        </div>
+
+        <!-- Evento 3: imagen izquierda, texto derecha -->
+        <div class="timeline__component timeline__date">
+          <img src="assets/icons/plato.png" alt="Cena" />
+        </div>
+        <div class="timeline__middle">
+          <div class="timeline__point"></div>
+        </div>
+        <div class="timeline__component timeline__component--bg">
+          <h2 class="timeline__title">Cena</h2>
+          <p class="timeline__paragraph">7 pm</p>
+        </div>
+
+        <!-- Evento 4: texto izquierda, imagen derecha -->
+        <div class="timeline__component timeline__component--bg">
+          <h2 class="timeline__title">Baile</h2>
+          <p class="timeline__paragraph">9 pm</p>
+        </div>
+        <div class="timeline__middle">
+          <div class="timeline__point"></div>
+        </div>
+        <div class="timeline__component timeline__date timeline__date--right">
+          <img src="assets/icons/baile.png" alt="Baile" />
+        </div>
+
+        <!-- Evento 5: texto izquierda, imagen derecha -->
+        <div class="timeline__component timeline__date">
+          <img src="assets/icons/adios.png" alt="Adios" />
+        </div>
+        <div class="timeline__middle">
+          <div class="timeline__point"></div>
+        </div>
+        <div class="timeline__component timeline__component--bg">
+          <h2 class="timeline__title">Nos despedimos</h2>
+          <p class="timeline__paragraph">1 am</p>
         </div>
       </div>
     </section>
@@ -166,11 +175,11 @@
     <!-- 6. Mesa de Regalos -->
     <section class="seccion seis">
       <section class="container-fluid">
-        <h3 class="text-start">
+        <h5 class="text-start">
           Apreciamos profundamente su precencia en este día tan especial<br />Si
           deseas obsequiernos algo, hemos hemos dispuesto una mesa de regalos
           para su comodidad
-        </h3>
+        </h5>
         <div class="row">
           <div class="col-12 col-md-12 my-5">
             <a
@@ -213,11 +222,13 @@
         </div>
       </section>
     </section>
+    <!-- 7. Mesa de Regalos -->
+    <section class="seccion siete"></section>
 
-    <!-- 7. Confirmación -->
-    <section class="seccion siete">
-      <h2>Hemos resarvado un lugar en tu honor</h2>
-      <p>
+    <!-- 8. Confirmación -->
+    <section class="seccion ocho">
+      <h6>Hemos resarvado un lugar en tu honor</h6>
+      <p id="p3">
         Confirma tu asistecia
         <a href="#" data-bs-toggle="modal" data-bs-target="#modalConfirmacion"
           >aquí</a
@@ -397,17 +408,6 @@
         </button>
       </div>
     </section>
-    <footer>
-      Diseño de Invitación Digital<br />
-      <a
-        href="https://wa.me/524494144122?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20invitaci%C3%B3n%20digital"
-        style="color: #806201; text-decoration: none"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Más información aquí
-      </a>
-    </footer>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
