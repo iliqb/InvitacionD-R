@@ -499,11 +499,11 @@ img.wishlist {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .ceremonia {
-  top: 0rem;
+  top: -5rem;
   left: 1rem;
 }
 .recepcion {
-  bottom: 0rem;
+  bottom: -5rem;
   right: 1rem;
 }
 .info {
@@ -520,10 +520,10 @@ img.wishlist {
 /* Media queries */
 @media (max-width: 768px) {
   .modal-bienvenida h1 {
-    font-size: 2rem;
+    font-size: 4rem;
   }
   .modal-lateral-nombres {
-    font-size: 4rem;
+    font-size: 2rem;
   }
   .modal-lateral-fecha {
     font-size: 1.125rem;
