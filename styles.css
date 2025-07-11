@@ -12,7 +12,6 @@
 }
 
 /* Reset y estructura base */
-html,
 body {
   margin: 0;
   padding: 0;
@@ -168,6 +167,27 @@ button:hover {
     width: 100%;
     font-size: 1rem;
   }
+
+  .seccion {
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline__middle {
+    display: none;
+  }
+
+  .timeline__component--bg,
+  .timeline__date {
+    width: 100%;
+    margin: 1rem 0;
+    text-align: center;
+  }
 }
 
 /* Secciones de página */
@@ -177,11 +197,19 @@ button:hover {
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 2rem;
+  padding: 2rem 1rem;
   box-sizing: border-box;
+  scroll-snap-align: start;
+  gap: 1rem;
+  border-radius: 1rem;
+}
+
+.seccion {
+  margin-top: 10px;
 }
 
 .seccion.uno {
@@ -191,6 +219,9 @@ button:hover {
 .seccion.dos {
   background-image: url("assets/photos/Foto2.JPG");
 }
+.seccion.tres {
+  background-image: url("assets/photos/Fondo5.png");
+}
 
 .seccion.cinco {
   background-image: url("assets/photos/Fondo2.jpg");
@@ -199,7 +230,9 @@ button:hover {
 .seccion.seis {
   background-image: url("assets/photos/Fondo3.png");
 }
-
+.seccion.siete {
+  background-image: url("assets/photos/Fondo6.jpg");
+}
 .seccion.ocho {
   background-image: url("assets/photos/Imagen13.JPG");
 }
@@ -274,6 +307,14 @@ h5 {
 }
 
 /* Línea de tiempo */
+.titulo-itinerario {
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  font-family: "Golden";
+}
+
 .timeline {
   margin: 0 auto;
   max-width: 750px;
@@ -282,19 +323,27 @@ h5 {
   grid-template-columns: 0.8fr 40px 0.8fr;
   font-family: "Fira Sans", sans-serif;
   color: #ffffff;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-in-out;
+}
+
+.timeline.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .timeline__component {
   margin: 0 10px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .timeline__component--bg {
   padding: 20px;
-  flex-direction: column;
-  text-align: center;
 }
 
 .timeline__middle {
@@ -326,6 +375,64 @@ h5 {
   justify-content: flex-end;
 }
 
+.timeline__title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.timeline__paragraph {
+  font-size: 1rem;
+  color: #dddddd;
+}
+
+.event {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.event.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Espacio entre secciones con fondo */
+.seccion {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 768px) {
+  .timeline {
+    grid-template-columns: 1fr;
+    padding: 20px 10px;
+  }
+
+  .timeline__middle {
+    display: none;
+  }
+
+  .timeline__component {
+    margin-bottom: 2rem;
+  }
+
+  .timeline__date img {
+    width: 64px;
+    height: 64px;
+  }
+
+  .timeline__title {
+    font-size: 1.2rem;
+  }
+
+  .timeline__paragraph {
+    font-size: 1rem;
+  }
+}
+
 /* Imágenes de regalos */
 img.wishlist {
   border-radius: 0.5rem;
@@ -349,4 +456,49 @@ img.wishlist {
   z-index: 9999;
   opacity: 0;
   transition: opacity 0.3s ease;
+}
+
+/* Ubicaciones */
+.contenedor-ubicaciones {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+}
+
+/* Estilo general de bloques */
+.ubicacion {
+  position: absolute;
+  max-width: 300px;
+  padding: 1rem;
+  color: #5a3b2f;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Ceremonia a la esquina superior izquierda */
+.ceremonia {
+  top: -15rem;
+  left: 1rem;
+}
+
+/* Recepción a la esquina inferior derecha */
+.recepcion {
+  bottom: -15rem;
+  right: 1rem;
+}
+
+/* Imagen pequeña al lado del texto */
+.info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.icono {
+  width: 40px;
+  height: auto;
+}
+
+
 }

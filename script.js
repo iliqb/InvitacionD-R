@@ -1,24 +1,30 @@
 window.addEventListener("load", () => {
+  // Mostrar modal de bienvenida al cargar
   const modal = document.querySelector(".modal-bienvenida");
   modal.style.display = "flex";
+
+  // Vuelve al top al cargar
+  window.scrollTo({ top: 0, behavior: "auto" });
 });
-// Función para cerrar el modal
+
+// Cierra el modal de bienvenida
 function cerrarModalWelcome() {
   const modal = document.querySelector(".modal-bienvenida");
-  modal.style.display = "none";
+  if (modal) modal.style.display = "none";
 }
 
-// Función para cerrar el menú
+// Cierra el menú (si lo usas)
 function cerrarMenu() {
   const menu = document.querySelector(".estilos-menu");
-  menu.style.display = "none";
+  if (menu) menu.style.display = "none";
 }
 
-// Función para cambiar el tema
+// Cambia el tema (si lo usas)
 function cambiarTema(tema) {
-  document.body.className = tema; // Cambiar el tema del body
+  document.body.className = tema;
 }
-// cuenta regresiva
+
+// Cuenta regresiva
 const fechaBoda = new Date("2025-10-04T00:00:00").getTime();
 const cuenta = document.getElementById("cuenta-regresiva");
 
@@ -34,19 +40,17 @@ setInterval(() => {
   cuenta.textContent = `${d} días ${h}h ${m}m ${s}s`;
 }, 1000);
 
-// musica
+// Música
 const musica = document.getElementById("musica");
 const btnIngresar = document.getElementById("btn-ingresar");
 const btnMusica = document.querySelector(".btn-musica");
-const iconoMusica = btnMusica.querySelector("div"); // Ícono dentro del botón
+const iconoMusica = btnMusica.querySelector("div");
 
 btnIngresar.addEventListener("click", () => {
   cerrarModalWelcome();
-
   musica
     .play()
     .then(() => {
-      console.log("Música reproduciéndose");
       btnMusica.classList.remove("pausa");
       iconoMusica.classList.remove("icono-silencio");
       iconoMusica.classList.add("icono-sonando");
@@ -56,9 +60,7 @@ btnIngresar.addEventListener("click", () => {
     });
 });
 
-btnMusica.addEventListener("click", reproducirMusica);
-
-function reproducirMusica() {
+btnMusica.addEventListener("click", () => {
   if (musica.paused) {
     musica
       .play()
@@ -76,16 +78,11 @@ function reproducirMusica() {
     iconoMusica.classList.remove("icono-sonando");
     iconoMusica.classList.add("icono-silencio");
   }
-}
+});
 
-function cerrarModalWelcome() {
-  const modal = document.querySelector(".modal-bienvenida");
-  if (modal) modal.style.display = "none";
-}
-
+// Copiar info bancaria
 function copyInfo() {
   const textoACopiar = "012320015086639718";
-
   navigator.clipboard
     .writeText(textoACopiar)
     .then(() =>
@@ -102,7 +99,6 @@ function mostrarNotificacion(mensaje) {
   notif.style.display = "block";
   notif.style.opacity = "1";
 
-  // Ocultar luego de 3 segundos
   setTimeout(() => {
     notif.style.opacity = "0";
     setTimeout(() => {
@@ -110,6 +106,52 @@ function mostrarNotificacion(mensaje) {
     }, 300);
   }, 10000);
 }
+
+// Animación de eventos al hacer scroll
+document.addEventListener("DOMContentLoaded", () => {
+  // Observador para mostrar eventos
+  const eventObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          eventObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  document.querySelectorAll(".event").forEach((el) => {
+    if (el instanceof Element) {
+      eventObserver.observe(el);
+    }
+  });
+
+  // Ocultar header al ver carrusel
+  const header = document.querySelector("header.inicio");
+  const noHeader = document.querySelector(".no-header");
+
+  if (header && noHeader) {
+    const headerObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            header.style.opacity = "0";
+            header.style.visibility = "hidden";
+            header.style.transition = "opacity 0.5s ease, visibility 0.5s ease";
+          } else {
+            header.style.opacity = "0.8";
+            header.style.visibility = "visible";
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    headerObserver.observe(noHeader);
+  }
+});
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -126,44 +168,7 @@ const observer = new IntersectionObserver(
 );
 
 document.querySelectorAll(".event").forEach((event) => {
-  observer.observe(event);
+  if (event instanceof Element) {
+    observer.observe(event);
+  }
 });
-
-document.addEventListener("DOMContentLoaded", function () {
-  const header = document.querySelector("header.inicio");
-  const noHeader = document.querySelector(".no-header");
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Cuando el carrusel es visible
-          header.style.opacity = "0";
-          header.style.visibility = "hidden";
-          header.style.transition = "opacity 0.5s ease, visibility 0.5s ease";
-        } else {
-          // Cuando el carrusel no es visible
-          header.style.opacity = ".8";
-          header.style.visibility = "visible";
-        }
-      });
-    },
-    {
-      threshold: 0.1, // Activa cuando el 10% del carrusel es visible
-    }
-  );
-
-  observer.observe(noHeader);
-});
-
-// Al cargar la página
-window.onload = function () {
-  // Vuelve al top inmediatamente
-  window.scrollTo(0, 0);
-
-  // Opcional: Suavizado para navegadores modernos
-  window.scrollTo({
-    top: 0,
-    behavior: "auto", // 'smooth' para animación (quita el auto si quieres efecto)
-  });
-};

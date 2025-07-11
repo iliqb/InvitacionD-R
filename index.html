@@ -68,7 +68,6 @@
       <div class="contenido">
         <h2>D Y R</h2>
         <p id="p2">04.10.25</p>
-        <img src="assets/photos/Foto1.JPG" alt="Foto de los novios" />
       </div>
     </section>
 
@@ -83,89 +82,96 @@
     </section>
 
     <!-- 3. Lugares -->
-    <section class="container">
-      <div class="row">
-        <div class="col-12 col-md-12 my-5">
+    <section class="seccion tres">
+      <div class="contenedor-ubicaciones">
+        <!-- Ceremonia -->
+        <div id="Ceremonia" class="ubicacion ceremonia">
           <h3>Ceremonia Religiosa</h3>
-          <img src="assets/icons/iglesia.png" alt="Iglesia" class="img-fluid" />
-          <p>Capilla de Hacienda de la Magdalena<br />4 pm</p>
+          <div class="info">
+            <img src="assets/icons/alfiler.png" alt="alfiler" class="icono" />
+            <p>Capilla de Hacienda de la Magdalena<br />4 pm</p>
+          </div>
           <a href="https://maps.app.goo.gl/NYTcfsoNVMekuZew6" target="_blank">
             <button type="button">Cómo llegar</button>
           </a>
         </div>
-        <div class="col-12 col-md-12 my-5">
-          <h3>Recepción / Evento</h3>
-          <img src="assets/icons/mansion.png" alt="Evento" class="img-fluid" />
-          <p>Los Agaves Eventos<br />19:00 hrs</p>
-          <a href="https://maps.app.goo.gl/ugybqq1hNqykeFQJ8" target="_blank">
-            <button type="button">Cómo llegar</button>
-          </a>
+
+        <!-- Recepción -->
+        <div id="Recepcion" class="ubicacion recepcion">
+          <h3>Recepción</h3>
+          <div class="info">
+            <img src="assets/icons/alfiler.png" alt="alfiler" class="icono" />
+            <p>Jardín Chapultepec<br />Hacienda la Magdalena<br />19:00 hrs</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- 4. Cronología -->
 
-    <!-- 4. cronologia 2.0 -->
     <section class="seccion cinco">
-      <h4>Itinerario de la Boda</h4>
+      <h4 class="titulo-itinerario">Itinerario de la Boda</h4>
       <div class="timeline">
-        <!-- Evento 1: imagen izquierda, texto derecha -->
-        <div class="timeline__component timeline__date">
+        <!-- Evento 1 -->
+        <div class="timeline__component timeline__date event">
           <img src="assets/icons/iglesia.png" alt="Iglesia" />
         </div>
         <div class="timeline__middle">
           <div class="timeline__point"></div>
         </div>
-        <div class="timeline__component timeline__component--bg">
+        <div class="timeline__component timeline__component--bg event">
           <h2 class="timeline__title">Ceremonia Religiosa</h2>
           <p class="timeline__paragraph">4 pm</p>
         </div>
 
-        <!-- Evento 2: texto izquierda, imagen derecha -->
-        <div class="timeline__component timeline__component--bg">
+        <!-- Evento 2 -->
+        <div class="timeline__component timeline__component--bg event">
           <h2 class="timeline__title">Cocktail de Bienvenida</h2>
           <p class="timeline__paragraph">5 pm</p>
         </div>
         <div class="timeline__middle">
           <div class="timeline__point"></div>
         </div>
-        <div class="timeline__component timeline__date timeline__date--right">
+        <div
+          class="timeline__component timeline__date timeline__date--right event"
+        >
           <img src="assets/icons/vino.png" alt="Cocktail" />
         </div>
 
-        <!-- Evento 3: imagen izquierda, texto derecha -->
-        <div class="timeline__component timeline__date">
+        <!-- Evento 3 -->
+        <div class="timeline__component timeline__date event">
           <img src="assets/icons/plato.png" alt="Cena" />
         </div>
         <div class="timeline__middle">
           <div class="timeline__point"></div>
         </div>
-        <div class="timeline__component timeline__component--bg">
+        <div class="timeline__component timeline__component--bg event">
           <h2 class="timeline__title">Cena</h2>
           <p class="timeline__paragraph">7 pm</p>
         </div>
 
-        <!-- Evento 4: texto izquierda, imagen derecha -->
-        <div class="timeline__component timeline__component--bg">
+        <!-- Evento 4 -->
+        <div class="timeline__component timeline__component--bg event">
           <h2 class="timeline__title">Baile</h2>
           <p class="timeline__paragraph">9 pm</p>
         </div>
         <div class="timeline__middle">
           <div class="timeline__point"></div>
         </div>
-        <div class="timeline__component timeline__date timeline__date--right">
+        <div
+          class="timeline__component timeline__date timeline__date--right event"
+        >
           <img src="assets/icons/baile.png" alt="Baile" />
         </div>
 
-        <!-- Evento 5: texto izquierda, imagen derecha -->
-        <div class="timeline__component timeline__date">
+        <!-- Evento 5 -->
+        <div class="timeline__component timeline__date event">
           <img src="assets/icons/adios.png" alt="Adios" />
         </div>
         <div class="timeline__middle">
           <div class="timeline__point"></div>
         </div>
-        <div class="timeline__component timeline__component--bg">
+        <div class="timeline__component timeline__component--bg event">
           <h2 class="timeline__title">Nos despedimos</h2>
           <p class="timeline__paragraph">1 am</p>
         </div>
@@ -177,8 +183,8 @@
       <section class="container-fluid">
         <h5 class="text-start">
           Apreciamos profundamente su precencia en este día tan especial<br />Si
-          deseas obsequiernos algo, hemos hemos dispuesto una mesa de regalos
-          para su comodidad
+          deseas obsequiernos algo,<br />
+          hemos hemos dispuesto una mesa de regalos para su comodidad
         </h5>
         <div class="row">
           <div class="col-12 col-md-12 my-5">
@@ -222,8 +228,16 @@
         </div>
       </section>
     </section>
-    <!-- 7. Mesa de Regalos -->
-    <section class="seccion siete"></section>
+    <!-- 7. Niños -->
+    <section class="seccion siete">
+      <p id="p3">
+        Aunque amamos a sus pequeños,<br />deseamos que esta noche sea una
+        escapada especial solo para los grandes.<br />Apreciamos su
+        comprensión,<br />
+        esta será una celebración solo para niños.
+      </p>
+      <p id="p4">NO NIÑOS</p>
+    </section>
 
     <!-- 8. Confirmación -->
     <section class="seccion ocho">
