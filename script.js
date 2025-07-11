@@ -1,30 +1,39 @@
+// Mostrar el modal de bienvenida al cargar la página
 window.addEventListener("load", () => {
-  // Mostrar modal de bienvenida al cargar
   const modal = document.querySelector(".modal-bienvenida");
-  modal.style.display = "flex";
+  if (modal) {
+    modal.style.display = "flex";
+  }
 
-  // Vuelve al top al cargar
-  window.scrollTo({ top: 0, behavior: "auto" });
+  // Asegurar que la página comience desde arriba
+  window.scrollTo({
+    top: 0,
+    behavior: "auto",
+  });
 });
 
-// Cierra el modal de bienvenida
+// Función para cerrar el modal de bienvenida
 function cerrarModalWelcome() {
   const modal = document.querySelector(".modal-bienvenida");
-  if (modal) modal.style.display = "none";
+  if (modal) {
+    modal.style.display = "none";
+  }
 }
 
-// Cierra el menú (si lo usas)
+// Función para cerrar un menú si existe
 function cerrarMenu() {
   const menu = document.querySelector(".estilos-menu");
-  if (menu) menu.style.display = "none";
+  if (menu) {
+    menu.style.display = "none";
+  }
 }
 
-// Cambia el tema (si lo usas)
+// Cambiar el tema del sitio (modo oscuro o claro)
 function cambiarTema(tema) {
   document.body.className = tema;
 }
 
-// Cuenta regresiva
+// Configuración de la cuenta regresiva
 const fechaBoda = new Date("2025-10-04T00:00:00").getTime();
 const cuenta = document.getElementById("cuenta-regresiva");
 
@@ -37,30 +46,35 @@ setInterval(() => {
   const m = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
   const s = Math.floor((diferencia % (1000 * 60)) / 1000);
 
-  cuenta.textContent = `${d} días ${h}h ${m}m ${s}s`;
+  if (cuenta) {
+    cuenta.textContent = `${d} días ${h}h ${m}m ${s}s`;
+  }
 }, 1000);
 
-// Música
+// Control de música
 const musica = document.getElementById("musica");
 const btnIngresar = document.getElementById("btn-ingresar");
 const btnMusica = document.querySelector(".btn-musica");
-const iconoMusica = btnMusica.querySelector("div");
+const iconoMusica = btnMusica?.querySelector("div");
 
-btnIngresar.addEventListener("click", () => {
+// Reproducir música al hacer clic en "INGRESAR"
+btnIngresar?.addEventListener("click", () => {
   cerrarModalWelcome();
+
   musica
     .play()
     .then(() => {
-      btnMusica.classList.remove("pausa");
-      iconoMusica.classList.remove("icono-silencio");
-      iconoMusica.classList.add("icono-sonando");
+      btnMusica?.classList.remove("pausa");
+      iconoMusica?.classList.remove("icono-silencio");
+      iconoMusica?.classList.add("icono-sonando");
     })
     .catch((error) => {
       console.log("No se pudo reproducir la música automáticamente:", error);
     });
 });
 
-btnMusica.addEventListener("click", () => {
+// Botón para activar o pausar música manualmente
+btnMusica?.addEventListener("click", () => {
   if (musica.paused) {
     musica
       .play()
@@ -80,7 +94,7 @@ btnMusica.addEventListener("click", () => {
   }
 });
 
-// Copiar info bancaria
+// Copiar datos bancarios al portapapeles
 function copyInfo() {
   const textoACopiar = "012320015086639718";
   navigator.clipboard
@@ -93,12 +107,16 @@ function copyInfo() {
     .catch((err) => console.error("Error al copiar al portapapeles: ", err));
 }
 
+// Mostrar notificación después de copiar
 function mostrarNotificacion(mensaje) {
   const notif = document.getElementById("notificacion");
+  if (!notif) return;
+
   notif.textContent = mensaje;
   notif.style.display = "block";
   notif.style.opacity = "1";
 
+  // Ocultar luego de 10 segundos
   setTimeout(() => {
     notif.style.opacity = "0";
     setTimeout(() => {
@@ -107,15 +125,14 @@ function mostrarNotificacion(mensaje) {
   }, 10000);
 }
 
-// Animación de eventos al hacer scroll
+// Animación al hacer scroll (eventos como línea de tiempo)
 document.addEventListener("DOMContentLoaded", () => {
-  // Observador para mostrar eventos
-  const eventObserver = new IntersectionObserver(
+  const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("visible");
-          eventObserver.unobserve(entry.target);
+          observer.unobserve(entry.target);
         }
       });
     },
@@ -124,51 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll(".event").forEach((el) => {
     if (el instanceof Element) {
-      eventObserver.observe(el);
+      observer.observe(el);
     }
   });
-
-  // Ocultar header al ver carrusel
-  const header = document.querySelector("header.inicio");
-  const noHeader = document.querySelector(".no-header");
-
-  if (header && noHeader) {
-    const headerObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            header.style.opacity = "0";
-            header.style.visibility = "hidden";
-            header.style.transition = "opacity 0.5s ease, visibility 0.5s ease";
-          } else {
-            header.style.opacity = "0.8";
-            header.style.visibility = "visible";
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    headerObserver.observe(noHeader);
-  }
-});
-
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  {
-    threshold: 0.1,
-  }
-);
-
-document.querySelectorAll(".event").forEach((event) => {
-  if (event instanceof Element) {
-    observer.observe(event);
-  }
 });

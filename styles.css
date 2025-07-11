@@ -16,16 +16,119 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Golden";
   background-color: #f9f9f3;
-  color: #b98d7a;
+  color: #8d6852;
   line-height: 1.6;
-}
-
-body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* Secciones */
+.seccion {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  scroll-snap-align: start;
+  gap: 1rem;
+  border-radius: 1rem;
+  margin-top: 10px;
+}
+
+/* Fondos por sección */
+.seccion.uno {
+  background-image: url("assets/photos/Foto1.JPG");
+  position: relative;
+}
+.seccion.dos {
+  background-image: url("assets/photos/Foto2.JPG");
+  position: relative;
+}
+.seccion.tres {
+  background-image: url("assets/photos/Fondo5.png");
+  position: relative;
+}
+.seccion.cinco {
+  background-image: url("assets/photos/Fondo2.jpg");
+}
+.seccion.seis {
+  background-image: url("assets/photos/Fondo3.png");
+}
+.seccion.siete {
+  background-image: url("assets/photos/Fondo6.jpg");
+}
+.seccion.ocho {
+  background-image: url("assets/photos/Imagen13.JPG");
+  justify-content: flex-start; /* Empuja el contenido hacia arriba */
+  padding-top: 4rem; /* Espacio desde arriba */
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+/* Títulos */
+h2 {
+  font-family: "Golden";
+  color: #fdf2ee;
+  top: -50rem;
+  margin-bottom: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  font-size: 5rem;
+}
+
+h3 {
+  font-family: "Golden";
+  color: #3f2414;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+h4 {
+  font-family: "Golden";
+  color: #8d6852;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  text-align: center;
+  font-size: 2.5rem;
+}
+h5 {
+  color: #8d6852;
+  font-family: "Golden";
+  font-weight: bolder;
+  text-align: center;
+  font-size: 2rem;
+}
+p {
+  font-family: "Golden";
+  color: #3f2414;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.5rem;
+}
+/* Confirmacion */
+h6 {
+  color: #fdf2ee;
+  font-family: "Royal";
+  font-size: 5rem;
+}
+
+/* Link dentro del párrafo con mismo color */
+h6 a {
+  color: #fdf2ee;
+  font-family: "Royal";
+  font-size: 5rem;
 }
 
 /* Modal de bienvenida */
@@ -47,7 +150,6 @@ body {
   color: #b19d65;
   letter-spacing: 0.2rem;
 }
-
 .modal-bienvenida-body {
   text-align: center;
   padding: 2rem;
@@ -60,23 +162,19 @@ body {
   width: 90%;
   max-width: 600px;
 }
-
 .modal-bienvenida h1 {
   font-family: "Royal";
   font-size: 3.75rem;
   color: #b19d65;
 }
-
 .modal-bienvenida p {
   font-family: "Golden";
   color: #b19d65;
   font-weight: bold;
 }
-
 .modal-lateral-nombres {
   font-size: 2.5rem;
 }
-
 .modal-lateral-fecha {
   font-size: 1.5625rem;
   font-weight: bold;
@@ -96,21 +194,18 @@ body {
   font-weight: bold;
   font-family: "Golden";
 }
-
 #btn-ingresar:hover {
   transform: scale(1.05);
   background-color: #6b5518;
 }
 
-/* Panel fijo inferior derecho */
+/* Música */
 .fixed-panel {
   position: fixed;
   bottom: 1.25rem;
   right: 1.25rem;
   z-index: 9999;
 }
-
-/* Botón de música */
 .btn-musica {
   background-color: #999859;
   border-radius: 50%;
@@ -123,18 +218,15 @@ body {
   padding: 0.2rem;
   box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.2);
 }
-
 .icono-silencio,
 .icono-sonando {
   width: 3rem;
   height: 3rem;
   background-size: cover;
 }
-
 .icono-silencio {
   background-image: url("assets/icons/silencio.png");
 }
-
 .icono-sonando {
   background-image: url("assets/icons/sonido.png");
 }
@@ -148,113 +240,179 @@ button {
   cursor: pointer;
   border-radius: 0.5rem;
 }
-
 button:hover {
   background-color: #7e7d43;
 }
 
-@media (max-width: 768px) {
-  .modal-bienvenida h1 {
-    font-size: 2rem;
-  }
-  .modal-lateral-nombres {
-    font-size: 1.5rem;
-  }
-  .modal-lateral-fecha {
-    font-size: 1.125rem;
-  }
-  #btn-ingresar {
-    width: 100%;
-    font-size: 1rem;
-  }
+/* Inicio  */
+/* Fade in (solo opacidad) */
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
 
-  .seccion {
-    background-attachment: scroll;
-    background-size: cover;
-    background-position: center;
-  }
+.fade-in.visible {
+  opacity: 1;
+}
 
-  .timeline {
-    grid-template-columns: 1fr;
-  }
+/* Retrasos escalonados para animaciones */
+.delay-1 {
+  transition-delay: 0.4s;
+}
+.delay-2 {
+  transition-delay: 0.8s;
+}
 
-  .timeline__middle {
-    display: none;
-  }
+/* SeGUNDA HOJA  Entrada desde la izquierda + fade */
+.fade-slide {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
 
-  .timeline__component--bg,
-  .timeline__date {
-    width: 100%;
-    margin: 1rem 0;
-    text-align: center;
+.fade-slide.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Retraso para elementos en secuencia */
+.delay-1 {
+  transition-delay: 0.4s;
+}
+
+/* Cuenta regresiva */
+.texto-boda {
+  font-family: "Golden", serif;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: slideIn 1s ease forwards;
+}
+.titulo-boda,
+#p3 {
+  font-family: "Royal", cursive;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #f5e6cc;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: slideIn 1s ease forwards;
+  animation-delay: 0.4s;
+}
+.cuenta-regresiva {
+  position: absolute;
+  bottom: 1.5rem;
+  width: 100%;
+  font-size: 2rem;
+  font-family: "Golden", serif;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  color: #ffffff;
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
-/* Secciones de página */
-.seccion {
-  min-height: 100vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+/* Línea de tiempo */
+.timeline {
+  margin: 0 auto;
+  max-width: 750px;
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: 0.8fr 40px 0.8fr;
+  font-family: "Fira Sans", sans-serif;
+  color: #ffffff;
+}
+.timeline__component {
+  margin: 0 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  padding: 2rem 1rem;
-  box-sizing: border-box;
-  scroll-snap-align: start;
-  gap: 1rem;
+  text-align: center;
+}
+.timeline__component--bg {
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 1rem;
+  padding: 20px;
 }
-
-.seccion {
-  margin-top: 10px;
+.timeline__middle {
+  position: relative;
+  width: 4px;
+  background: #fff;
 }
-
-.seccion.uno {
-  background-image: url("assets/photos/Foto1.JPG");
+.timeline__point {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 2;
 }
-
-.seccion.dos {
-  background-image: url("assets/photos/Foto2.JPG");
+.timeline__date img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
 }
-.seccion.tres {
-  background-image: url("assets/photos/Fondo5.png");
+.timeline__date--right {
+  justify-content: flex-end;
 }
-
-.seccion.cinco {
-  background-image: url("assets/photos/Fondo2.jpg");
-}
-
-.seccion.seis {
-  background-image: url("assets/photos/Fondo3.png");
-}
-.seccion.siete {
-  background-image: url("assets/photos/Fondo6.jpg");
-}
-.seccion.ocho {
-  background-image: url("assets/photos/Imagen13.JPG");
-}
-
-/* Títulos */
-h1,
-h2,
-h3,
-h4 {
-  font-family: "Golden";
-  color: #a47864;
-  margin-bottom: 1.25rem;
+.timeline__title {
+  font-size: 2rem;
   font-weight: bold;
-  text-align: center;
-  font-size: 2.5rem;
-}
-
-h5 {
   color: #8d6852;
+  margin-bottom: 0.5rem;
+}
+.timeline__paragraph {
+  font-size: 1rem;
+  color: #99745e;
   font-weight: bold;
+}
+.event {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.event.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Niños */
+#p4 {
+  font-family: "Golden";
+  font-size: 3rem;
+  color: #8d6852;
+  margin-bottom: 2rem;
   text-align: center;
-  font-size: 1.8rem;
+}
+#p5 {
+  font-family: "Golden";
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #8d6852;
+  margin-bottom: 2rem;
+}
+/* Carrusel */
+.carousel {
+  width: 100vw;
+  height: auto;
+}
+.carousel img {
+  border-radius: 0;
+  width: 100%;
+  object-fit: cover;
 }
 
 /* Confirmación */
@@ -265,7 +423,6 @@ h5 {
   max-width: 500px;
   margin: auto;
 }
-
 .Confirmacion input,
 .Confirmacion textarea {
   padding: 0.75rem;
@@ -273,12 +430,10 @@ h5 {
   border-radius: 0.5rem;
   font-size: 1rem;
 }
-
 .Confirmacion textarea {
   resize: vertical;
   min-height: 6rem;
 }
-
 .Confirmacion button {
   background-color: #999859;
   color: white;
@@ -289,151 +444,11 @@ h5 {
   font-size: 1rem;
   transition: background 0.3s ease;
 }
-
 .Confirmacion button:hover {
   background-color: #7e7d43;
 }
 
-/* Carrusel */
-.carousel {
-  width: 100vw;
-  height: auto;
-}
-
-.carousel img {
-  border-radius: 0;
-  width: 100%;
-  object-fit: cover;
-}
-
-/* Línea de tiempo */
-.titulo-itinerario {
-  text-align: center;
-  font-size: 2rem;
-  color: #fff;
-  margin-bottom: 2rem;
-  font-family: "Golden";
-}
-
-.timeline {
-  margin: 0 auto;
-  max-width: 750px;
-  padding: 40px 20px;
-  display: grid;
-  grid-template-columns: 0.8fr 40px 0.8fr;
-  font-family: "Fira Sans", sans-serif;
-  color: #ffffff;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease-in-out;
-}
-
-.timeline.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.timeline__component {
-  margin: 0 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.timeline__component--bg {
-  padding: 20px;
-}
-
-.timeline__middle {
-  position: relative;
-  width: 3px;
-  margin: 0 auto;
-  background: #ffffff;
-}
-
-.timeline__point {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 16px;
-  height: 16px;
-  background: #ffffff;
-  border-radius: 50%;
-  z-index: 2;
-}
-
-.timeline__date img {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-}
-
-.timeline__date--right {
-  justify-content: flex-end;
-}
-
-.timeline__title {
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
-}
-
-.timeline__paragraph {
-  font-size: 1rem;
-  color: #dddddd;
-}
-
-.event {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.event.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Espacio entre secciones con fondo */
-.seccion {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-
-/* Adaptación para celulares */
-@media (max-width: 768px) {
-  .timeline {
-    grid-template-columns: 1fr;
-    padding: 20px 10px;
-  }
-
-  .timeline__middle {
-    display: none;
-  }
-
-  .timeline__component {
-    margin-bottom: 2rem;
-  }
-
-  .timeline__date img {
-    width: 64px;
-    height: 64px;
-  }
-
-  .timeline__title {
-    font-size: 1.2rem;
-  }
-
-  .timeline__paragraph {
-    font-size: 1rem;
-  }
-}
-
-/* Imágenes de regalos */
+/* Lista de regalos */
 img.wishlist {
   border-radius: 0.5rem;
   width: 50% !important;
@@ -464,41 +479,59 @@ img.wishlist {
   width: 100%;
   min-height: 400px;
 }
-
-/* Estilo general de bloques */
 .ubicacion {
   position: absolute;
   max-width: 300px;
   padding: 1rem;
   color: #5a3b2f;
   border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.445);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-
-/* Ceremonia a la esquina superior izquierda */
 .ceremonia {
   top: -15rem;
   left: 1rem;
 }
-
-/* Recepción a la esquina inferior derecha */
 .recepcion {
   bottom: -15rem;
   right: 1rem;
 }
-
-/* Imagen pequeña al lado del texto */
 .info {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   text-align: center;
 }
-
 .icono {
   width: 40px;
   height: auto;
 }
 
+/* Media queries */
+@media (max-width: 768px) {
+  .modal-bienvenida h1 {
+    font-size: 2rem;
+  }
+  .modal-lateral-nombres {
+    font-size: 1.5rem;
+  }
+  .modal-lateral-fecha {
+    font-size: 1.125rem;
+  }
+  #btn-ingresar {
+    width: 50%;
+    font-size: 1rem;
+  }
 
+  .texto-boda {
+    font-size: 1.2rem;
+  }
+  .titulo-boda {
+    font-size: 2rem;
+  }
+  .cuenta-regresiva {
+    font-size: 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
 }
