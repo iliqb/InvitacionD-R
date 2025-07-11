@@ -401,10 +401,11 @@ button:hover {
 /* Niños */
 #p4 {
   font-family: "Golden";
-  font-size: 3rem;
+  font-size: 2rem;
   color: #8d6852;
   margin-bottom: 2rem;
   text-align: center;
+  padding: 2rem;
 }
 #p5 {
   font-family: "Golden";
@@ -498,11 +499,11 @@ img.wishlist {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .ceremonia {
-  top: -15rem;
+  top: 0rem;
   left: 1rem;
 }
 .recepcion {
-  bottom: -15rem;
+  bottom: 0rem;
   right: 1rem;
 }
 .info {
@@ -522,7 +523,7 @@ img.wishlist {
     font-size: 2rem;
   }
   .modal-lateral-nombres {
-    font-size: 3rem;
+    font-size: 4rem;
   }
   .modal-lateral-fecha {
     font-size: 1.125rem;
