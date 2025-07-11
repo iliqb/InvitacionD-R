@@ -48,10 +48,18 @@ body {
 .seccion.uno {
   background-image: url("assets/photos/Foto1.JPG");
   position: relative;
+  justify-content: flex-start; /* Empuja el contenido hacia arriba */
+  padding-top: 4rem; /* Espacio desde arriba */
+  padding-bottom: 2rem;
+  text-align: center;
 }
 .seccion.dos {
   background-image: url("assets/photos/Foto2.JPG");
   position: relative;
+  justify-content: flex-start; /* Empuja el contenido hacia arriba */
+  padding-top: 4rem; /* Espacio desde arriba */
+  padding-bottom: 2rem;
+  text-align: center;
 }
 .seccion.tres {
   background-image: url("assets/photos/Fondo5.png");
@@ -67,7 +75,7 @@ body {
   background-image: url("assets/photos/Fondo6.jpg");
 }
 .seccion.ocho {
-  background-image: url("assets/photos/Imagen13.JPG");
+  background-image: url("assets/photos/Foto3.JPG");
   justify-content: flex-start; /* Empuja el contenido hacia arriba */
   padding-top: 4rem; /* Espacio desde arriba */
   padding-bottom: 2rem;
@@ -239,13 +247,15 @@ button {
   border: none;
   cursor: pointer;
   border-radius: 0.5rem;
+  align-items: center;
 }
 button:hover {
   background-color: #7e7d43;
 }
 
 /* Inicio  */
-/* Fade in (solo opacidad) */
+/* ========= FADE IN (Sección uno) ========= */
+/* FADE IN */
 .fade-in {
   opacity: 0;
   transition: opacity 1s ease-in;
@@ -255,15 +265,7 @@ button:hover {
   opacity: 1;
 }
 
-/* Retrasos escalonados para animaciones */
-.delay-1 {
-  transition-delay: 0.4s;
-}
-.delay-2 {
-  transition-delay: 0.8s;
-}
-
-/* SeGUNDA HOJA  Entrada desde la izquierda + fade */
+/* SLIDE IN + FADE */
 .fade-slide {
   opacity: 0;
   transform: translateX(-40px);
@@ -275,50 +277,57 @@ button:hover {
   transform: translateX(0);
 }
 
-/* Retraso para elementos en secuencia */
+/* Retrasos */
 .delay-1 {
   transition-delay: 0.4s;
 }
+.delay-2 {
+  transition-delay: 0.8s;
+}
 
-/* Cuenta regresiva */
+/* Estilos de texto */
 .texto-boda {
   font-family: "Golden", serif;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
-  opacity: 0;
-  animation: slideIn 1s ease forwards;
+}
+#p1 {
+  font-family: "Golden";
+  color: #fdf2ee;
+  top: -50rem;
+  margin-bottom: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  font-size: 5rem;
+}
+#p2 {
+  font-family: "Golden";
+  color: #fdf2ee;
+  top: -50rem;
+  margin-bottom: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  font-size: 2rem;
 }
 .titulo-boda,
 #p3 {
   font-family: "Royal", cursive;
-  font-size: 2.5rem;
-  font-weight: bold;
+  font-size: 5rem;
   color: #f5e6cc;
   margin-bottom: 2rem;
-  opacity: 0;
-  animation: slideIn 1s ease forwards;
-  animation-delay: 0.4s;
 }
+
+/* Cuenta regresiva */
 .cuenta-regresiva {
   position: absolute;
   bottom: 1.5rem;
   width: 100%;
-  font-size: 2rem;
+  font-size: 3rem;
   font-family: "Golden", serif;
   display: flex;
   justify-content: center;
   gap: 1rem;
-  color: #ffffff;
-}
-@keyframes slideIn {
-  from {
-    transform: translateX(-40px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+  color: #f5e6cc;
 }
 
 /* Línea de tiempo */
@@ -513,7 +522,7 @@ img.wishlist {
     font-size: 2rem;
   }
   .modal-lateral-nombres {
-    font-size: 1.5rem;
+    font-size: 3rem;
   }
   .modal-lateral-fecha {
     font-size: 1.125rem;
@@ -521,17 +530,5 @@ img.wishlist {
   #btn-ingresar {
     width: 50%;
     font-size: 1rem;
-  }
-
-  .texto-boda {
-    font-size: 1.2rem;
-  }
-  .titulo-boda {
-    font-size: 2rem;
-  }
-  .cuenta-regresiva {
-    font-size: 1.5rem;
-    flex-wrap: wrap;
-    gap: 0.5rem;
   }
 }
