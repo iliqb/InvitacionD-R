@@ -499,11 +499,11 @@ img.wishlist {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .ceremonia {
-  top: -5rem;
+  top: -10rem;
   left: 1rem;
 }
 .recepcion {
-  bottom: -5rem;
+  bottom: -10rem;
   right: 1rem;
 }
 .info {
@@ -531,5 +531,31 @@ img.wishlist {
   #btn-ingresar {
     width: 50%;
     font-size: 1rem;
+
+    .ceremonia {
+      top: -1rem;
+      left: 1rem;
+    }
+    .recepcion {
+      bottom: -1rem;
+      right: 1rem;
+    }
+  }
+}
+@media (max-width: 576px) {
+  .fixed-panel {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .btn-musica {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .icono-silencio,
+  .icono-sonando {
+    width: 2.2rem;
+    height: 2.2rem;
   }
 }
