@@ -333,31 +333,35 @@ button:hover {
 /* Línea de tiempo */
 .timeline {
   margin: 0 auto;
+  width: 100%;
   max-width: 750px;
-  padding: 40px 20px;
+  padding: 40px 16px;
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: 0.8fr 40px 0.8fr;
   font-family: "Fira Sans", sans-serif;
   color: #ffffff;
+  overflow-x: hidden;
 }
+
 .timeline__component {
-  margin: 0 10px;
+  margin: 0 6px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  word-break: break-word;
 }
-.timeline__component--bg {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 1rem;
-  padding: 20px;
-}
+
 .timeline__middle {
   position: relative;
   width: 4px;
   background: #fff;
+  height: 100%;
+  margin: 0 auto;
 }
+
 .timeline__point {
   position: absolute;
   top: 50%;
@@ -369,25 +373,33 @@ button:hover {
   border-radius: 50%;
   z-index: 2;
 }
+
+.timeline__component--bg {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 20px;
+}
+
 .timeline__date img {
   width: 80px;
-  height: 80px;
+  height: auto;
   object-fit: contain;
+  max-width: 100%;
 }
-.timeline__date--right {
-  justify-content: flex-end;
-}
+
 .timeline__title {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bold;
   color: #8d6852;
   margin-bottom: 0.5rem;
 }
+
 .timeline__paragraph {
   font-size: 1rem;
   color: #99745e;
   font-weight: bold;
 }
+
 .event {
   opacity: 0;
   transform: translateY(30px);
@@ -531,15 +543,14 @@ img.wishlist {
   #btn-ingresar {
     width: 50%;
     font-size: 1rem;
-
-    .ceremonia {
-      top: -1rem;
-      left: 1rem;
-    }
-    .recepcion {
-      bottom: -1rem;
-      right: 1rem;
-    }
+  }
+  .ceremonia {
+    top: -1rem;
+    left: 1rem;
+  }
+  .recepcion {
+    bottom: -1rem;
+    right: 1rem;
   }
 }
 @media (max-width: 576px) {
