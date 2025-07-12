@@ -549,6 +549,7 @@ img.wishlist {
   }
 
   .btn-musica {
+    position: relative;
     width: 3rem;
     height: 3rem;
   }
