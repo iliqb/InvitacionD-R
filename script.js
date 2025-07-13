@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { threshold: 0.1 }
   );
 
-  document.querySelectorAll(".event").forEach((el) => {
+  document.querySelectorAll(".event, .fade-in, .fade-slide").forEach((el) => {
     if (el instanceof Element) {
       observer.observe(el);
     }
