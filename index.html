@@ -64,20 +64,26 @@
     </audio>
 
     <!-- 1. Foto -->
+    <!-- Sección 1: Fade In -->
+    <!-- Sección uno: imagen más pequeña -->
     <section class="seccion uno">
       <div class="contenido">
-        <h2 class="fade-in event">D Y R</h2>
-        <p id="p1" class="fade-in event delay-1">04.10.25</p>
+        <img
+          src="assets/icons/Titulo.png"
+          alt="Titulo"
+          class="fade-img event fade-in img-pequena"
+        />
       </div>
     </section>
 
-    <!-- 2. Cuenta Regresiva -->
+    <!-- Sección dos: imagen más grande -->
     <section class="seccion dos">
       <div class="contenido">
-        <p class="texto-boda fade-slide event" id="p2">
-          Nos complace invitarte a la celebración de
-        </p>
-        <p class="titulo-boda fade-slide event delay-1" id="p3">Nuestra Boda</p>
+        <img
+          src="assets/icons/Titulo2.png"
+          alt="Titulo2"
+          class="fade-img event fade-slide delay-1 img-grande"
+        />
       </div>
       <div id="cuenta-regresiva" class="cuenta-regresiva"></div>
     </section>
@@ -93,7 +99,7 @@
             <p>Capilla de Hacienda de la Magdalena<br />4 pm</p>
           </div>
           <a href="https://maps.app.goo.gl/NYTcfsoNVMekuZew6" target="_blank">
-            <button type="button">Cómo llegar</button>
+            <button type="button" id="btn-ubi">Cómo llegar</button>
           </a>
         </div>
 

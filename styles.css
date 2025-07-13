@@ -256,33 +256,42 @@ button:hover {
 /* Inicio  */
 /* ========= FADE IN (Sección uno) ========= */
 /* FADE IN */
-.fade-in {
+/* Imagen base */
+.fade-img {
+  display: block;
+  margin: 0 auto;
   opacity: 0;
-  transition: opacity 1s ease-in;
+}
+.img-grande {
+  width: 90vw; /* 60% del ancho de la pantalla */
 }
 
+.img-pequena {
+  width: 90vw;
+}
+
+/* Fade in puro (sección uno) */
+.fade-in {
+  transition: opacity 1.2s ease;
+}
 .fade-in.visible {
   opacity: 1;
 }
 
-/* SLIDE IN + FADE */
+/* Slide desde la izquierda con fade (sección dos) */
 .fade-slide {
   opacity: 0;
   transform: translateX(-40px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition: opacity 1s ease, transform 1s ease;
 }
-
 .fade-slide.visible {
   opacity: 1;
   transform: translateX(0);
 }
 
-/* Retrasos */
+/* Retraso opcional */
 .delay-1 {
   transition-delay: 0.4s;
-}
-.delay-2 {
-  transition-delay: 0.8s;
 }
 
 /* Estilos de texto */

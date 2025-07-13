@@ -1,3 +1,4 @@
+/* ========== BOTÓN DE MODO OSCURO ========== */
 .toggle-btn {
   position: relative;
   width: 60px;
@@ -43,7 +44,8 @@
   box-sizing: border-box;
 }
 
-.moon, .sun {
+.moon,
+.sun {
   font-size: 14px;
   transition: opacity 0.3s ease;
 }
@@ -60,82 +62,134 @@
   opacity: 0;
 }
 
-
-/* === Estilos generales para modo oscuro === */
+/* ========== MODO OSCURO GENERAL ========== */
 body.dark-mode {
   background-color: #121212;
-  color: #ffffff !important; /* Fuerza texto blanco en todo el body */
+  color: #ffffff !important;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* === Encabezado === */
-body.dark-mode .inicio h1 {
+/* Encabezado */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h6,
+body.dark-mode p {
   color: #ffffff;
 }
+body.dark-mode h5 {
+  color: #121212;
+}
 
-/* === Sección de Foto === */
-body.dark-mode .foto {
+/* Secciones generales */
+body.dark-mode .seccion {
   background-color: #121212;
 }
 
-body.dark-mode .inicio {
-  background-color: #121212;
-  opacity: 0.8;
+/* Modal bienvenida */
+body.dark-mode .modal-bienvenida {
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
-/* === Sección de Frase (Intro) === */
-body.dark-mode .Intro blockquote {
-  background-color: #121212;
-  color: #ffffff;
-}
-
-/* === Sección de Fecha (Cuenta Regresiva) === */
-body.dark-mode .Fecha,
-body.dark-mode .Fecha p,
-body.dark-mode #p1 {
-  background-color: #121212;
-  color: #ffffff;
-}
-
-body.dark-mode .Fecha p,
-body.dark-mode .Fecha strong {
-  color: #ffffff;
-}
-
-/* === Sección de Nombres === */
-body.dark-mode .Nombres {
-  background-color: #121212;
-  color: #ffffff;
-}
-
-/* === Sección de Lugares (Ceremonia/Recepción) === */
-body.dark-mode .container {
+body.dark-mode .modal-bienvenida-body {
   background-color: #121212;
 }
 
-body.dark-mode h1, 
-body.dark-mode h3 {
+body.dark-mode .modal-bienvenida h1,
+body.dark-mode .modal-bienvenida p,
+body.dark-mode .modal-lateral-nombres,
+body.dark-mode .modal-lateral-fecha {
   color: #ffffff;
 }
 
-/* === Timeline (Cronología) === */
-body.dark-mode .timeline-section {
+body.dark-mode #btn-ingresar {
+  background-color: #ffffff;
+  color: #121212;
+}
+
+body.dark-mode button {
+  background-color: #ffffff;
+  color: #121212;
+}
+
+/* Panel flotante: Música + DarkMode */
+body.dark-mode .btn-musica {
+  background-color: #333;
+}
+
+body.dark-mode .toggle-btn {
+  background-color: #333;
+}
+
+body.dark-mode .toggle-btn.dark {
+  background-color: #555;
+}
+
+/* Íconos e imágenes generales */
+body.dark-mode img[src*="icons/"],
+body.dark-mode .icono-silencio,
+body.dark-mode .icono-sonando {
+  filter: invert(1) brightness(1.5);
+}
+
+/* =============================== */
+/* === MESA DE REGALOS OSCURA === */
+/* =============================== */
+body.dark-mode .mesaregalos {
   background-color: #121212;
 }
 
-body.dark-mode .timeline::before {
-  background: #ffffff !important; /* Línea central blanca */
-  animation: moveline 20s linear forwards;
-}
-
-body.dark-mode .timeline-section h3,
-body.dark-mode .timeline-section h6,
-body.dark-mode .event .time,
-body.dark-mode .event .label {
+body.dark-mode .mesaregalos h3 {
   color: #ffffff;
 }
 
-/* === Confirmación de Asistencia === */
+body.dark-mode img.wishlist {
+  filter: invert(1) grayscale(1) brightness(0.7);
+}
+
+/* =============================== */
+/* === LÍNEA DE TIEMPO OSCURA === */
+/* =============================== */
+body.dark-mode .timeline {
+  color: #121212;
+}
+
+body.dark-mode .timeline__component--bg {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .timeline__middle {
+  background: #121212;
+}
+
+body.dark-mode .timeline__point {
+  background: #121212;
+}
+
+body.dark-mode .timeline__title {
+  color: #121212;
+}
+
+body.dark-mode .timeline__paragraph {
+  color: #121212;
+}
+
+body.dark-mode .timeline__date img {
+  filter: invert(1) brightness(1.2);
+}
+
+/* =============================== */
+/* === CUENTA REGRESIVA OSCURA === */
+/* =============================== */
+body.dark-mode #cuenta-regresiva,
+body.dark-mode .cuenta-regresiva {
+  color: #ffffff;
+}
+
+/* =============================== */
+/* === CONFIRMACIÓN OSCURA === */
+/* =============================== */
 body.dark-mode .Confirmacion {
   background-color: #121212;
 }
@@ -157,115 +211,9 @@ body.dark-mode .Confirmacion button {
   color: #121212;
 }
 
-/* === Mesa de Regalos === */
-body.dark-mode .mesaregalos {
-  background-color: #121212;
-}
-
-body.dark-mode .mesaregalos h3 {
-  color: #ffffff;
-}
-
-/* === Hoteles === */
-body.dark-mode .hoteles {
-  background-color: #121212;
-}
-
-body.dark-mode .hoteles h4,
-body.dark-mode .hoteles h5 {
-  color: #ffffff;
-}
-
-/* === Carousel (Fotos) === */
-body.dark-mode .carousel {
-  background-color: #121212;
-}
-
-body.dark-mode .carousel-control-prev,
-body.dark-mode .carousel-control-next {
-  background-color: transparent;
-}
-
-body.dark-mode .carousel-control-prev:hover,
-body.dark-mode .carousel-control-next:hover {
-  background-color: #ffffff;
-  opacity: 0.5;
-}
-
-/* === Modal de Bienvenida === */
-body.dark-mode .modal-bienvenida {
-  background-color: rgba(0, 0, 0, 0.9);
-}
-
-body.dark-mode .modal-bienvenida-body {
-  background-color: #121212;
-}
-
-body.dark-mode .modal-lateral-nombres,
-body.dark-mode .modal-lateral-fecha,
-body.dark-mode .modal-bienvenida p {
-  color: #ffffff;
-}
-
-body.dark-mode #btn-ingresar {
-  background-color: #ffffff;
-  color: #121212;
-}
-
-body.dark-mode button {
-  background-color: #ffffff;
-  color: #121212;
-}
-
-/* === Botones Flotantes (Música + Dark Mode) === */
-body.dark-mode .btn-musica {
-  background-color: #333;
-}
-
-body.dark-mode .toggle-btn {
-  background-color: #333;
-}
-
-body.dark-mode .toggle-btn.dark {
-  background-color: #555;
-}
-
-body.dark-mode img[src*="icons/"],
-body.dark-mode .icono-silencio,
-body.dark-mode .icono-sonando {
-  filter: invert(1) brightness(1.5);
-}
-
-body.dark-mode img.wishlist {
-  filter: brightness(0) invert(1) sepia(0) saturate(10000%);
-}
-
-body.dark-mode .bg-light {
-  background-color: #121212 !important;
-}
-
-/* === Cuenta Regresiva === */
-body.dark-mode #cuenta-regresiva {
-  color: #ffffff;
-  background-color: #121212; /* Opcional: si tiene fondo */
-}
-
-/* === Nombres de los novios === */
-body.dark-mode .Nombres p {
-  color: #ffffff;
-}
-
-/* === Frase romántica (Intro) === */
-body.dark-mode .Intro p {
-  color: #ffffff;
-}
-
-/* === Ajustes adicionales para el bloque de cita (opcional) === */
-body.dark-mode .Intro blockquote p {
-  color: #ffffff !important; /* Fuerza el color si hay herencias */
-}
-
-
+/* =============================== */
+/* === NOTIFICACIÓN OSCURA === */
+/* =============================== */
 body.dark-mode #notificacion {
   display: none;
   position: fixed;
@@ -276,7 +224,7 @@ body.dark-mode #notificacion {
   color: black;
   padding: 12px 24px;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   font-family: sans-serif;
   z-index: 9999;
   opacity: 0;
