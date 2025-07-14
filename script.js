@@ -139,9 +139,25 @@ document.addEventListener("DOMContentLoaded", () => {
     { threshold: 0.1 }
   );
 
-  document.querySelectorAll(".event, .fade-in, .fade-slide").forEach((el) => {
+  document.querySelectorAll(".event, .fade-img, .fade-slide").forEach((el) => {
     if (el instanceof Element) {
       observer.observe(el);
     }
   });
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const invitados = parseInt(params.get("invitados")); // convertimos a número
+
+  const numeroElemento = document.getElementById("numero");
+
+  if (numeroElemento) {
+    if (!isNaN(invitados) && invitados > 0) {
+      const texto = invitados === 1 ? "1 lugar" : `${invitados} lugares`;
+      numeroElemento.textContent = texto;
+    } else {
+      // Si no se especifica o es inválido, usamos valor por defecto
+      numeroElemento.textContent = "un lugar";
+    }
+  }
 });
